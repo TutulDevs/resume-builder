@@ -1,10 +1,10 @@
-
+import Layout from "./components/layout/Layout";
 
 function App() {
   return (
-    <div className="App">
-      Hello there 
-    </div>
+    <Layout>
+      <h1>BOdy</h1>
+    </Layout>
   );
 }
 
