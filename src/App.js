@@ -1,7 +1,8 @@
+import { useEffect, useState } from "react";
 import Layout from "./components/layout/Layout";
 import useViewport from "./hooks/useViewport";
 import Modal from "./components/UI/Modal";
-import { useEffect, useState } from "react";
+import Form from "./components/Form.js/Form";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -25,6 +26,8 @@ function App() {
     return () => setShowModal(false);
   }, [width]);
 
+  const submitFormHandler = (data) => console.table(data);
+
   return (
     <>
       {showModal && (
@@ -36,7 +39,11 @@ function App() {
       <Layout>
         <h1>Width: {width}px</h1>
 
-        <button onClick={showModalHandler} className='border p-2 bg-indigo-300'>
+        <Form onSubmitForm={submitFormHandler} />
+
+        <button
+          onClick={showModalHandler}
+          className='border p-2 my-4 bg-indigo-300'>
           Modal
         </button>
       </Layout>
