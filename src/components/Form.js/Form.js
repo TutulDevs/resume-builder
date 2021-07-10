@@ -9,8 +9,8 @@ import { useForm } from "react-hook-form";
 // });
 
 const Form = (props) => {
-  const [showSocial, setShowSocial] = useState(false);
-  const [showSkills, setShowSkills] = useState(false);
+  //const [showSocial, setShowSocial] = useState(false);
+  // const [showSkills, setShowSkills] = useState(false);
 
   const {
     register,
@@ -56,7 +56,23 @@ const Form = (props) => {
         </div>
       </div>
 
-      {/* Socials */}
+      <div className='my-4'>
+        <button
+          type='submit'
+          className='py-2 px-6 bg-header text-white rounded-lg transition duration-100 focus:ring-4 focus:ring-blue-400'>
+          Submit
+        </button>
+      </div>
+    </form>
+  );
+};
+
+export default Form;
+
+/*
+
+
+      
       <h2
         onClick={() => setShowSocial(!showSocial)}
         className='border-b border-header text-header text-xl font-medium mt-4'>
@@ -159,15 +175,4 @@ const Form = (props) => {
         </div>
       </div>
 
-      <div className='my-4'>
-        <button
-          type='submit'
-          className='py-2 px-6 bg-header text-white rounded-lg transition duration-100 focus:ring-4 focus:ring-blue-400'>
-          Submit
-        </button>
-      </div>
-    </form>
-  );
-};
-
-export default Form;
+*/
