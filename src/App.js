@@ -1,41 +1,53 @@
 //import React, { useState } from "react";
-import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
+import "./App.css";
 
 function App() {
   //const [resumeData, setResumeData] = useState(null);
   // const submitFormHandler = (data) => setResumeData(data);
   // console.log(resumeData);
 
-  // Create styles
-  const styles = StyleSheet.create({
-    page: {
-      width: "100vw",
-      flexDirection: "column",
-      backgroundColor: "#E4E4E4",
-    },
-    section: {
-      width: "100vw",
-      margin: 10,
-      padding: 10,
-      flexGrow: 1,
-    },
-  });
+  // url setup for puppeteer
+  const url = new URL(window.location.href);
+  const params = new URLSearchParams(url.search);
+  const resumeOnlyMode = params.get("resumeonly");
 
-  // Create Document Component
-  const MyDocument = (
-    <Document>
-      <Page size='A4' style={styles.page}>
-        <View style={styles.section}>
-          <Text>Section #1</Text>
-        </View>
-        <View style={styles.section}>
-          <Text>Section #2</Text>
-        </View>
-      </Page>
-    </Document>
+  console.log(params);
+  console.log(resumeOnlyMode);
+
+  return (
+    <div className='App'>
+      {!resumeOnlyMode && <div id='other-body-stuff'>Hi stuff goes here</div>}
+
+      <div id='pdf' className='mx-auto my-6'>
+        <div id='header'>
+          <div id='header-left'>
+            <div>
+              <a href='mailto:email@email.com'>email@email.com</a>
+            </div>
+            <div>
+              <a href='tel:555-555-1234'>(555) 555 - 1234</a>
+            </div>
+          </div>
+          <div id='header-middle'>
+            <p>William Kwok</p>
+          </div>
+          <div id='header-right'>
+            <div>
+              <a href='https://github.com/kwokwilliam'>kwokwilliam</a>
+            </div>
+            <div>
+              <a href='https://linkedin.com/in/william-w-kwok'>
+                william-w-kwok
+              </a>
+            </div>
+            <div>
+              <a href='https://williamk.info/?q=resexample'>williamk.info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-
-  return MyDocument;
 }
 
 export default App;
@@ -50,3 +62,11 @@ import Form from "./components/Form.js/Form";
     </Layout>
 
 */
+
+/*
+React pdf managers
+ * react-pdf
+ * pdfkit
+ * react-to-pdf
+ * puppeteer
+ */
