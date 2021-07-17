@@ -1,5 +1,5 @@
 //import React, { useState } from "react";
-import "./App.css";
+import './App.css';
 
 function App() {
   //const [resumeData, setResumeData] = useState(null);
@@ -9,39 +9,39 @@ function App() {
   // url setup for puppeteer
   const url = new URL(window.location.href);
   const params = new URLSearchParams(url.search);
-  const resumeOnlyMode = params.get("resumeonly");
+  const resumeOnlyMode = params.get('resumeonly');
 
   console.log(params);
   console.log(resumeOnlyMode);
 
   return (
-    <div className='App'>
-      {!resumeOnlyMode && <div id='other-body-stuff'>Hi stuff goes here</div>}
+    <div className="App">
+      {!resumeOnlyMode && <div id="other-body-stuff">Hi stuff goes here</div>}
 
-      <div id='pdf' className='mx-auto my-6'>
-        <div id='header'>
-          <div id='header-left'>
+      <div id="pdf" className="mx-auto my-6">
+        <div id="header">
+          <div id="header-left">
             <div>
-              <a href='mailto:email@email.com'>email@email.com</a>
+              <a href="mailto:email@email.com">email@email.com</a>
             </div>
             <div>
-              <a href='tel:555-555-1234'>(555) 555 - 1234</a>
+              <a href="tel:555-555-1234">(555) 555 - 1234</a>
             </div>
           </div>
-          <div id='header-middle'>
+          <div id="header-middle">
             <p>William Kwok</p>
           </div>
-          <div id='header-right'>
+          <div id="header-right">
             <div>
-              <a href='https://github.com/kwokwilliam'>kwokwilliam</a>
+              <a href="https://github.com/kwokwilliam">kwokwilliam</a>
             </div>
             <div>
-              <a href='https://linkedin.com/in/william-w-kwok'>
+              <a href="https://linkedin.com/in/william-w-kwok">
                 william-w-kwok
               </a>
             </div>
             <div>
-              <a href='https://williamk.info/?q=resexample'>williamk.info</a>
+              <a href="https://williamk.info/?q=resexample">williamk.info</a>
             </div>
           </div>
         </div>

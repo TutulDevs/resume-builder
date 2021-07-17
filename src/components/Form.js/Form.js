@@ -1,5 +1,5 @@
 //import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 // import { yupResolver } from "@hookform/resolvers/yup";
 // import * as yup from "yup";
 
@@ -22,44 +22,45 @@ const Form = (props) => {
   const onSubmit = (data) => props.onSubmitForm(data);
 
   const inputIsValid =
-    "py-1 px-2 w-full bg-white border border-blue-200 rounded-lg focus:ring focus:ring-blue-300 focus:outline-none";
+    'py-1 px-2 w-full bg-white border border-blue-200 rounded-lg focus:ring focus:ring-blue-300 focus:outline-none';
   const inputIsInvalid =
-    "py-1 px-2 w-full bg-white border border-red-300 rounded-lg focus:ring focus:ring-red-300 focus:outline-none";
+    'py-1 px-2 w-full bg-white border border-red-300 rounded-lg focus:ring focus:ring-red-300 focus:outline-none';
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {/* Header elements */}
-      <h2 className='border-b border-header text-header text-xl font-medium mt-4'>
+      <h2 className="border-b border-header text-header text-xl font-medium mt-4">
         Basic Information
       </h2>
-      <div className='basicInfo'>
-        <div className='my-2'>
-          <label htmlFor='fullName'>First Name</label>
+      <div className="basicInfo">
+        <div className="my-2">
+          <label htmlFor="fullName">First Name</label>
           <input
-            name='fullName'
-            id='fullName'
-            type='text'
-            {...register("fullName", { required: true })}
+            name="fullName"
+            id="fullName"
+            type="text"
+            {...register('fullName', { required: true })}
             className={errors.fullName ? inputIsInvalid : inputIsValid}
           />
         </div>
 
-        <div className='my-2'>
-          <label htmlFor='jobTitle'>Job Title</label>
+        <div className="my-2">
+          <label htmlFor="jobTitle">Job Title</label>
           <input
-            name='jobTitle'
-            id='jobTitle'
-            type='text'
-            {...register("jobTitle", { required: true })}
+            name="jobTitle"
+            id="jobTitle"
+            type="text"
+            {...register('jobTitle', { required: true })}
             className={errors.jobTitle ? inputIsInvalid : inputIsValid}
           />
         </div>
       </div>
 
-      <div className='my-4'>
+      <div className="my-4">
         <button
-          type='submit'
-          className='py-2 px-6 bg-header text-white rounded-lg transition duration-100 focus:ring-4 focus:ring-blue-400'>
+          type="submit"
+          className="py-2 px-6 bg-header text-white rounded-lg transition duration-100 focus:ring-4 focus:ring-blue-400"
+        >
           Submit
         </button>
       </div>
