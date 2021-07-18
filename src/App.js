@@ -1,4 +1,5 @@
 //import React, { useState } from "react";
+import axios from 'axios';
 import './App.css';
 
 function App() {
@@ -6,19 +7,37 @@ function App() {
   // const submitFormHandler = (data) => setResumeData(data);
   // console.log(resumeData);
 
-  // url setup for puppeteer
-  const url = new URL(window.location.href);
-  const params = new URLSearchParams(url.search);
-  const resumeOnlyMode = params.get('resumeonly');
+  const getPDF = () => {
+    return axios.get(`http://localhost:3000`, {
+      responseType: 'arraybuffer',
+      headers: {
+        Accept: 'application/pdf',
+      },
+    });
+  };
 
-  console.log(params);
-  console.log(resumeOnlyMode);
+  const savePDF = () => {
+    console.log('loading');
+    return getPDF() // API call
+      .then((response) => {
+        const blob = new Blob([response.data], { type: 'application/pdf' });
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = `your-file-name.pdf`;
+        link.click();
+        console.log('ready');
+      });
+  };
 
   return (
     <div className="App">
-      {!resumeOnlyMode && <div id="other-body-stuff">Hi stuff goes here</div>}
+      {/* {!resumeOnlyMode && <div id="other-body-stuff">Hi stuff goes here</div>} */}
 
-      <div id="pdf" className="mx-auto my-6">
+      <div id="pdf" className="my-6 mx-4 mx-auto bg-white font-mont">
+        <button onClick={savePDF} className=" m-2 p-4 bg-green-300">
+          Download
+        </button>
+
         <div id="header">
           <div id="header-left">
             <div>
