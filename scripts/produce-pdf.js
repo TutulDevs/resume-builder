@@ -1,14 +1,10 @@
 const puppeteer = require('puppeteer');
 
 const printPDF = async () => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
-  await page.goto('http://localhost:3000', {
+  await page.goto('http://localhost:3000/resume', {
     waitUntil: 'networkidle0',
-  });
-  await page.addStyleTag({
-    content:
-      '.nav { display: none} .navbar { border: 0px} #print-button {display: none}',
   });
 
   const pdf = await page.pdf({
