@@ -22,16 +22,3 @@ printPDF.then((pdf) => {
 
   res.send(pdf);
 });
-
-/*
-
-1. get the form data
-2. on submit
-  a. show alert for confirming
-  b. store the form data in Context
-  c. redirect to /resumePage route
-3. on /resumePage route
-  a. insert the data to resume fields from Context
-  b. show a download link
-
-*/

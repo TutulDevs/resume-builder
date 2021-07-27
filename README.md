@@ -1,6 +1,14 @@
 # Resume Builder
 
-Don't know what the heck I'm building!
+This project is on hold. I think, I don't have enough ability to complete this. If you're a good samaritan and want to work on it, I'll be damn proud.
+
+The initial functionality of this project is to fill the `Form` component with necessary info and send those data to `Resume` component to generate a **PDF** file.
+
+I failed in all the way possible to generate a PDF in the client side. Later I tried `Puppeteer` and succeeded to generate a PDF file but that file is corrupted.
+
+You're most welcome to work on it but please make it open source.
+
+Thanks.
 
 ### Getting Started with Create React App
 

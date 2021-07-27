@@ -34,6 +34,7 @@ function App() {
     setResumeData(data);
     savePDF();
   };
+
   console.log(resumeData);
 
   return (
